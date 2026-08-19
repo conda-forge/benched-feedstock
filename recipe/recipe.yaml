@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.4.0"
+  version: "0.5.0"
   python_min: "3.11"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/b/benched/benched-${{ version }}.tar.gz
-  sha256: d8799f75398c67a6ebda57dcbc63d6242931e4de7cee0f12bcfba02f7cd5d918
+  sha256: 9418ad69c8a46a775d21b863dd2b74adaf3f47104ef318d2ed2fefd648f0c53b
 
 build:
   number: 0
@@ -32,6 +32,7 @@ requirements:
   run:
     - fsspec >=2024.6
     - pluggy >=1.5,<2
+    - psutil >=5.9
     - pytest >=8.1
     - pytest-benchmark >=5.2,<6
     - python >=${{ python_min }}
