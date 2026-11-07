@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.5.0"
-  python_min: "3.11"
+  version: "0.5.1"
 
 package:
   name: benched
@@ -10,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/b/benched/benched-${{ version }}.tar.gz
-  sha256: 9418ad69c8a46a775d21b863dd2b74adaf3f47104ef318d2ed2fefd648f0c53b
+  sha256: 6627837d332a1b0fb4ca70e87a1b9119716ad9bdd3eec616446333eb0d831aa4
 
 build:
   number: 0
@@ -34,7 +33,8 @@ requirements:
     - pluggy >=1.5,<2
     - psutil >=5.9
     - pytest >=8.1
-    - pytest-benchmark >=5.2,<6
+    # Keep <5.3 until conda-forge provides py-cpuinfo2 >=10.1.
+    - pytest-benchmark >=5.2,<5.3
     - python >=${{ python_min }}
 
 tests:
